@@ -1,14 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
 
-int f(int n) {
+u_int32_t f(u_int32_t n) {
     if (n <= 1) return 1;
     else return f(n-1) + f(n-2);
 }
 
 int main (int argc, char** argv){
     if (argc > 1) {
-        int n = (int) argv[1];
-    return f(n);
+        u_int32_t n = atoi(argv[1]);
+    printf("%u\n", f(n));
     }
-
 }
