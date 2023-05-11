@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
+#include "fibonacci.h"
 
 u_int32_t f(u_int32_t n) {
     if (n <= 1) return 1;
