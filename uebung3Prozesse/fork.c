@@ -15,6 +15,14 @@ int global = 42;
 int main (void) {
     int pid, ret, local = 10;
 
+    char * buf = malloc(sizeof(char) * 16);
+
+    for (size_t i = 0; i < 16; i++)
+    {
+        buf[i] = 'a';
+    }
+    
+
     /* Fork
      */
     pid = fork ();
@@ -29,8 +37,8 @@ int main (void) {
      */
     if (pid == 0) {
         sleep(1);
-        printf ("Child  (PID = %6d, PPID = %6d, global = %d, local = %d)\n", 
-        getpid (), getppid (), global, local);
+        printf ("Child  (PID = %6d, PPID = %6d, global = %d, local = %d), buf = %s\n", 
+        getpid (), getppid (), global, local, buf);
         exit (EXIT_SUCCESS);
     }
 
@@ -40,12 +48,13 @@ int main (void) {
     if (pid > 0) {
         global = pid;
         local = pid;
-        printf("Parent (PID = %6d, PPID = %6d, global = %d, local = %d)\n", 
-        getpid (), getppid (), global, local);
+        buf[0] = 'b';
+        printf("Parent (PID = %6d, PPID = %6d, global = %d, local = %d), buf = %s\n", 
+        getpid (), getppid (), global, local, buf);
 
         /* Calling wait() blocks the parent until the child exited
          */
-        wait (&ret);
+        wait(&ret);
         printf ("Child exited with %d\n", ret);
 
         exit (EXIT_SUCCESS);
