@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <pthread.h>
 
-#define size 100
+#define size 1000000
 int A[size], B[size], C[size];
 
 void* add1stHalf(void* argv) {
