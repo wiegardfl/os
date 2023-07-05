@@ -4,6 +4,12 @@
         "limits.h": "c",
         "wait.h": "c",
         "unistd.h": "c",
-        "pthread.h": "c"
+        "pthread.h": "c",
+        "types.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "stddef.h": "c",
+        "libc-header-start.h": "c",
+        "semaphore.h": "c"
     }
 }
