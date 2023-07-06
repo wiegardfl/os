@@ -10,6 +10,7 @@
         "stdlib.h": "c",
         "stddef.h": "c",
         "libc-header-start.h": "c",
-        "semaphore.h": "c"
+        "semaphore.h": "c",
+        "time.h": "c"
     }
 }

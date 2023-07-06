@@ -13,7 +13,7 @@ sem_t sem_0,
     sem_2_4, sem_2_6,
     sem_3_4, sem_3_5,
     sem_5_6;
-sem_t* sem[NUMBER_OF_SEMAPHORES] = { &sem_0, &sem_1_2, &sem_1_3, &sem_2_4, &sem_2_6, &sem_3_4, &sem_3_5, &sem_5_6};
+sem_t* sem[NUMBER_OF_SEMAPHORES] = { &sem_0, &sem_1_2, &sem_1_3, &sem_2_4, &sem_2_6, &sem_3_4, &sem_3_5, &sem_5_6 };
 
 char* output;
 pthread_mutex_t mutex;
